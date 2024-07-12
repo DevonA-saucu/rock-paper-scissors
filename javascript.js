@@ -100,4 +100,14 @@ function playGame() {
         playRound(humanSelection, computerSelection);
         counter++;
     }
+
+    if (humanScore > computerScore) {
+        console.log(`You won! Your score was ${humanScore} and the computer's was ${computerScore}!`);
+    }
+    else if (computerScore > humanScore) {
+        console.log(`You lost! Your score was ${humanScore} and the computer's was ${computerScore}!`);
+    }
+    else {
+        console.log(`You tied! You and the computer both had a score of ${humanScore}!`);
+    }
 }

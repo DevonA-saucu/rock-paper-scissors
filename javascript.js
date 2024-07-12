@@ -18,3 +18,13 @@ function getComputerChoice() {
             return "rock";
     }
 }
+
+function getHumanChoice() {
+    let humChoice = prompt("What are you throwing?").toLowerCase();
+
+    while ((humChoice !== "rock") && (humChoice !== "paper") && (humChoice !== "scissors")) {
+        humChoice = prompt("Not a valid choice! Please pick: rock, paper, or scissors.").toLowerCase();
+    }
+
+    return humChoice;
+}

@@ -37,6 +37,7 @@ let counter = 0;
 
 const buttons = document.querySelector(".buttons");
 const results = document.querySelector(".results");
+const winner = document.querySelector(".winner");
 
 buttons.addEventListener("click", (e) => {
     let target = e.target;
@@ -45,7 +46,7 @@ buttons.addEventListener("click", (e) => {
 });
 
 function playRound(humanChoice, computerChoice) {
-    results.textContent = humanChoice;
+    winner.textContent = "";
     switch (humanChoice) {
         case "rock":
             switch (computerChoice) {
@@ -112,13 +113,13 @@ function playRound(humanChoice, computerChoice) {
     }
     if (counter === 5) {
         if (humanScore > computerScore) {
-            results.textContent = `You won the game! Your score was ${humanScore} and the computer's was ${computerScore}!`;
+            winner.textContent = `You won the game! Your score was ${humanScore} and the computer's was ${computerScore}!`;
         }
         else if (computerScore > humanScore) {
-            results.textContent = `You lost the game! Your score was ${humanScore} and the computer's was ${computerScore}!`;
+            winner.textContent = `You lost the game! Your score was ${humanScore} and the computer's was ${computerScore}!`;
         }
         else {
-            results.textContent = `You tied the game! You and the computer both had a score of ${humanScore}!`;
+            winner.textContent = `You tied the game! You and the computer both had a score of ${humanScore}!`;
         }
 
         humanScore = 0;
